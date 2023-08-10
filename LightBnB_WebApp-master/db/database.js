@@ -57,7 +57,14 @@ const addUser = function(user) {
 
 const getAllReservations = function(guest_id, limit = 10) {
   return pool
-    .query(`SELECT * FROM reservations WHERE guest_id = $1 LIMIT $2;`, [guest_id, limit])
+    .query(`SELECT *
+    FROM reservations
+    JOIN properties ON reservations.property_id = properties.id
+    JOIN property_reviews ON properties.id = property_reviews.property_id
+    WHERE reservations.guest_id = 1
+    GROUP BY properties.id, reservations.id
+    ORDER BY reservations.start_date
+    LIMIT 10;`, [guest_id, limit])
     .then((result) => {
       return result.rows;
     })
