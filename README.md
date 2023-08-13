@@ -5,3 +5,6 @@ LightBnb is a simplified clone of Airbnb, designed to showcase basic functionali
 ## Screenshots
 
 ![homepage](https://github.com/OneJuicyDoor/lightbnb/blob/master/lightbnb%20homepage.png)
+
+![homepage](https://github.com/OneJuicyDoor/lightbnb/blob/master/lightbnb%20signup.png)
+
